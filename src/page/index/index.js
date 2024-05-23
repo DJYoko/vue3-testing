@@ -1,8 +1,6 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import rootComponent from './App.vue';
 
-const pageInstance = createApp({
-  components: { pageComponent: App },
-});
-
-pageInstance.mount('#app');
+createApp({
+  components: { rootComponent },
+}).mount('#app');
