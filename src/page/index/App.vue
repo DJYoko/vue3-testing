@@ -2,7 +2,12 @@
 import { ref, reactive } from 'vue';
 import PageTitle from '@/components/PageTitle';
 import TextStyle from '@/components/TextStyle';
-
+const props = defineProps({
+  sampleValue: {
+    type: String,
+    default: 'default default',
+  },
+});
 const count = ref(0);
 
 function increment() {
@@ -16,6 +21,7 @@ function large() {
 
 <template>
   <div class="indexPage">
+    <p>{{ sampleValue }}</p>
     <PageTitle titleText="PageTitle component h1" :glade="1" />
     <PageTitle titleText="PageTitle component h2" :glade="2" />
     <PageTitle titleText="PageTitle component h3" :glade="3" />

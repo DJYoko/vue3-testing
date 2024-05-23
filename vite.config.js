@@ -33,6 +33,7 @@ export default defineConfig({
     alias: {
       // import path => "@" === "./src"
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      vue: 'vue/dist/vue.esm-bundler.js',
     },
     extensions: ['.js', '.vue', '.json'],
   },
