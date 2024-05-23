@@ -1,14 +1,6 @@
 <script setup>
-const props = defineProps({
-  titleText: {
-    type: String,
-    default: '',
-  },
-  glade: {
-    type: Number,
-    default: 1,
-  },
-});
+import pageProps from '@/props/pageProps';
+const props = defineProps(pageProps);
 </script>
 
 <template>
