@@ -1,8 +1,7 @@
-import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
-import { sync } from 'glob';
 import vue from '@vitejs/plugin-vue';
+import { fileURLToPath, URL } from 'node:url';
+import { sync } from 'glob';
 
 const htmlList = {};
 
@@ -32,7 +31,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      // import path => "@" === "./src"
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+    extensions: ['.js', '.vue', '.json'],
   },
 });
