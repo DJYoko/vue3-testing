@@ -1,16 +1,17 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import { fileURLToPath, URL } from 'node:url';
-import { sync } from 'glob';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url'
+import { sync } from 'glob'
+import { resolve } from 'path'
 
-const htmlList = {};
+const htmlList = {}
 
 // check ./html directory
 sync('./html/**/*.html').forEach((item) => {
-  const itemKey = item.replace(/[\\]/g, '-').replace(/\.html$/, '');
-  const itemValue = './' + item.replace(/\\/g, '/');
-  htmlList[itemKey] = itemValue;
-});
+  const itemKey = item.replace(/[\\]/g, '-').replace(/\.html$/, '')
+  const itemValue = './' + item.replace(/\\/g, '/')
+  htmlList[itemKey] = itemValue
+})
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,10 +20,10 @@ export default defineConfig({
     rollupOptions: {
       input: htmlList,
       output: {
-        // remove hash
-        entryFileNames: `assets/[name].js`,
-        chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`,
+        entryFileNames: `html/assets/[name].js`,
+        chunkFileNames: `html/assets/[name].js`,
+        assetFileNames: `html/assets/[name].[ext]`,
+        dir: resolve(__dirname, 'dist'), // ビルド後の出力先を /dist に指定
       },
     },
   },
@@ -31,10 +32,15 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // import path => "@" === "./src"
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': fileURLToPath(new URL('./resources', import.meta.url)),
       vue: 'vue/dist/vue.esm-bundler.js',
     },
     extensions: ['.js', '.vue', '.json'],
   },
-});
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './ComponentTest/setup.js',
+    include: ['./ComponentTest/case/**/*.spec.js'],
+  },
+})
