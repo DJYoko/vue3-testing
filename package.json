@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "playwright": "playwright test",
     "testJs": "jest",
-    "testVue": "vitest"
+    "testVue": "vitest",
+    "testAll": "jest && vitest"
   },
   "dependencies": {
     "glob": "^10.3.15",
