@@ -2,6 +2,9 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { counterStore } from '@/js/store/counter'
 
+jest.mock('axios')
+import axios from 'axios'
+
 describe('counterStore', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
@@ -23,5 +26,14 @@ describe('counterStore', () => {
     store.increment()
     store.decrement()
     expect(store.total).toBe(0)
+  })
+
+  it('load the total', async () => {
+    const store = counterStore()
+    const mockAxios = axios
+    const SAMPLE_RESPONSE = Math.floor(Math.random * 10)
+    mockAxios.get.mockResolvedValue({ data: { responseTotal: SAMPLE_RESPONSE } })
+    await store.load()
+    expect(store.total).toBe(SAMPLE_RESPONSE)
   })
 })
