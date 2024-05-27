@@ -1,0 +1,6 @@
+{
+  "testMatch": ["**/TestJs/**/*.spec.js"],
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/resources/$1"
+  }
+}
