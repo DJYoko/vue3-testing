@@ -8,14 +8,14 @@ const props = defineProps({
     default: 'default default',
   },
 })
-const count = ref(0)
+const dataCount = ref(0)
 
 function increment() {
-  count.value++
+  dataCount.value++
 }
 
 function large() {
-  return count.value >= 10
+  return dataCount.value >= 10
 }
 </script>
 
@@ -71,8 +71,8 @@ function large() {
       :glade="6"
     />
     <p>Entry: Index 1</p>
-    <button @click="increment">Count is: {{ count }}</button>
-    <div v-show="large()">Count is Large now!</div>
+    <button @click="increment">dataCount is: {{ dataCount }}</button>
+    <div v-show="large()">dataCount is Large than 10!</div>
   </div>
 </template>
 
