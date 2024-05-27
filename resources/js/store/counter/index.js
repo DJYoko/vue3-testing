@@ -6,6 +6,7 @@ export const counterStore = defineStore('counter', {
   }),
   actions: {
     increment() {
+      // axios
       this.total++
     },
     decrement() {

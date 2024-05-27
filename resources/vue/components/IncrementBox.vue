@@ -1,12 +1,12 @@
 <script setup>
 import { reactive, computed } from 'vue'
-import store from '@/js/store'
-const counter = store.counterStore()
+// import store from '@/js/store'
+// const counter = store.counterStore()
 
 // 以下の手法でもインポートできるが全機能をそれぞれ記述することになる
 // ここは他メンバーと相談
-// import { counterStore } from '@/js/store/counter'
-// const counter = counterStore()
+import { counterStore } from '@/js/store/counter'
+const counter = counterStore()
 
 const increment = () => {
   counter.increment()

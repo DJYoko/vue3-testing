@@ -40,7 +40,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './ComponentTest/setup.js',
-    include: ['./ComponentTest/case/**/*.spec.js'],
+    setupFiles: './TestVue/setup.js',
+    include: ['./TestVue/case/**/*.spec.js'],
   },
 })
