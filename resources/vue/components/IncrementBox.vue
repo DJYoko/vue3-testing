@@ -1,10 +1,5 @@
 <script setup>
 import { reactive, computed } from 'vue'
-// import store from '@/js/store'
-// const counter = store.counterStore()
-
-// 以下の手法でもインポートできるが全機能をそれぞれ記述することになる
-// ここは他メンバーと相談
 import { counterStore } from '@/js/store/counter'
 const counter = counterStore()
 
@@ -21,7 +16,7 @@ const isMinus = computed(() => {
 </script>
 
 <template>
-  <div class="IncrementBox">
+  <div class="incrementBox">
     <p>increment box</p>
     <div>
       count:
@@ -38,7 +33,7 @@ const isMinus = computed(() => {
 </template>
 
 <style lang="scss">
-.IncrementBox {
+.incrementBox {
   border: 1px solid #ccc;
   padding: 20px;
 
