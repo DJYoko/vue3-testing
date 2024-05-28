@@ -18,8 +18,6 @@ const props = defineProps({
 
 const emit = defineEmits(['onChange'])
 
-const dataCount = ref(0)
-
 const onChange = (event) => {
   emit('onChange', event.target.checked)
 }
