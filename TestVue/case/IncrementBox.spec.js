@@ -1,5 +1,5 @@
 import { render } from '@testing-library/vue'
-import IncrementBox from '@/vue/components/IncrementBox'
+import IncrementBox from '@/vue/component/IncrementBox'
 import { setActivePinia, createPinia } from 'pinia'
 import { counterStore } from '@/js/store/counter'
 

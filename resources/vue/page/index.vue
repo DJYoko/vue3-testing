@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
-import PageTitle from '@/vue/components/PageTitle'
-import TextStyle from '@/vue/components/TextStyle'
+import PageTitle from '@/vue/component/PageTitle'
+import TextStyle from '@/vue/component/TextStyle'
 const props = defineProps({
   sampleValue: {
     type: String,

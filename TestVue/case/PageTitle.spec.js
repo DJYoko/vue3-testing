@@ -1,5 +1,5 @@
 import { render } from '@testing-library/vue'
-import PageTitle from '@/vue/components/PageTitle'
+import PageTitle from '@/vue/component/PageTitle'
 
 test('displays title', () => {
   const { getByText } = render(PageTitle, {

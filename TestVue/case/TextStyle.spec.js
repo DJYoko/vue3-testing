@@ -1,5 +1,5 @@
 import { render } from '@testing-library/vue'
-import TextStyle from '@/vue/components/TextStyle'
+import TextStyle from '@/vue/component/TextStyle'
 
 test('displays title', () => {
   const { getByText } = render(TextStyle, {

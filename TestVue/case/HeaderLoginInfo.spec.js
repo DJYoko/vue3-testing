@@ -1,5 +1,5 @@
 import { render } from '@testing-library/vue'
-import HeaderLoginInfo from '@/vue/components/HeaderLoginInfo'
+import HeaderLoginInfo from '@/vue/layout/HeaderLoginInfo'
 
 test('displays message', () => {
   const { getByText } = render(HeaderLoginInfo, {

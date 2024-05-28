@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import rootComponent from '@/vue/page/index.vue'
-import HeaderLoginInfo from '@/vue/components/HeaderLoginInfo'
-import IncrementBox from '@/vue/components/IncrementBox'
+import HeaderLoginInfo from '@/vue/layout/HeaderLoginInfo'
+import IncrementBox from '@/vue/component/IncrementBox'
 
 const _piniaInstance = createPinia()
 
