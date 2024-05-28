@@ -1,17 +1,17 @@
 <script setup>
 import { reactive, computed } from 'vue'
-import { counterStore } from '@/js/store/counter'
-const counter = counterStore()
+import { storeCounter } from '@/js/store/counter'
+const STORE_COUNTER = storeCounter()
 
 const increment = () => {
-  counter.increment()
+  STORE_COUNTER.increment()
 }
 const decrement = () => {
-  counter.decrement()
+  STORE_COUNTER.decrement()
 }
 
 const isMinus = computed(() => {
-  return counter.total < 0
+  return STORE_COUNTER.total < 0
 })
 </script>
 
@@ -24,7 +24,7 @@ const isMinus = computed(() => {
         :class="isMinus ? 'textRed' : null"
         class="countNumber"
         data-testid="countNumberElement"
-        >{{ counter.total }}</span
+        >{{ STORE_COUNTER.total }}</span
       >
     </div>
     <button @click="increment">increment</button>&nbsp;

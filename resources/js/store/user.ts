@@ -7,7 +7,7 @@ type UserModel = {
   role: string
 }
 
-export const userStore = defineStore('userStore', {
+export const storeUser = defineStore('storeUser', {
   state: (): UserModel => ({
     name: '',
     id: 0,

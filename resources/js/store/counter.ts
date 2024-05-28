@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 
-export const counterStore = defineStore('counter', {
+export const storeCounter = defineStore('storeCounter', {
   state: () => ({
     total: 0,
   }),
