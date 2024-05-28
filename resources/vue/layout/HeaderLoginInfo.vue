@@ -11,4 +11,9 @@ const props = defineProps({
   <p class="headerLoginInfo">{{ userName }}</p>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.headerLoginInfo {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+</style>
