@@ -16,7 +16,7 @@ export const storeCounter = defineStore('storeCounter', {
       try {
         const { data } = await axios.get('/api/getData')
         this.total = data.responseTotal
-        return data // { message: "Real response!" }
+        return data
       } catch (err) {
         if (err instanceof AxiosError) {
           throw new Error(err.message)
