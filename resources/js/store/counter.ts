@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import axios, { AxiosError } from 'axios'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 
 export const counterStore = defineStore('counter', {
   state: () => ({
@@ -7,19 +7,17 @@ export const counterStore = defineStore('counter', {
   }),
   actions: {
     increment() {
-      // axios
       this.total++
     },
     decrement() {
       this.total--
     },
     async load() {
-      // axios sample
       try {
-        const { data } = await axios.get('/api/getData')
+        const { data }: AxiosResponse = await axios.get('/api/getData')
         this.total = data.responseTotal
         return data // { message: "Real response!" }
-      } catch (err: any) {
+      } catch (err) {
         if (err instanceof AxiosError) {
           throw new Error(err.message)
         } else {

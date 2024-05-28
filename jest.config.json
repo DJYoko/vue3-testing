@@ -1,4 +1,5 @@
 {
+  "moduleFileExtensions": ["js", "json", "jsx", "ts", "tsx", "node"],
   "testMatch": ["**/TestJs/**/*.spec.js"],
   "moduleNameMapper": {
     "^@/(.*)$": "<rootDir>/resources/$1"
