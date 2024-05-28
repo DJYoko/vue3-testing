@@ -1,16 +1,16 @@
 import { defineStore } from 'pinia'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 
-interface UserModel {
+type UserModel = {
   name: string
-  id: string
+  id: number
   role: string
 }
 
 export const userStore = defineStore('userStore', {
   state: (): UserModel => ({
     name: '',
-    id: '',
+    id: 0,
     role: '',
   }),
   actions: {
