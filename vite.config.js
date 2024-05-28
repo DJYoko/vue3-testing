@@ -35,7 +35,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./resources', import.meta.url)),
       vue: 'vue/dist/vue.esm-bundler.js',
     },
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.ts'],
   },
   test: {
     globals: true,
