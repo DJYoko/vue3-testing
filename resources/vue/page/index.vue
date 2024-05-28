@@ -2,6 +2,7 @@
 import { ref, reactive } from 'vue'
 import PageTitle from '@/vue/component/PageTitle'
 import TextStyle from '@/vue/component/TextStyle'
+import CSwitch from '@/vue/component/CSwitch'
 const props = defineProps({
   sampleValue: {
     type: String,
@@ -16,6 +17,17 @@ function increment() {
 
 function large() {
   return dataCount.value >= 10
+}
+
+const dataCheckedItem = ref([])
+function onChangeSwitch(ITEM_VALUE, isChecked) {
+  const checkedItemIndex = dataCheckedItem.value.indexOf(ITEM_VALUE)
+  if (checkedItemIndex !== -1) {
+    dataCheckedItem.value.splice(checkedItemIndex, 1)
+  }
+  if (isChecked) {
+    dataCheckedItem.value.push(ITEM_VALUE)
+  }
 }
 </script>
 
@@ -73,6 +85,21 @@ function large() {
     <p>Entry: Index 1</p>
     <button @click="increment">dataCount is: {{ dataCount }}</button>
     <div v-show="large()">dataCount is Large than 10!</div>
+    <br />
+    <br />
+    <div>
+      <CSwitch
+        labelText="check item 01"
+        :isChecked="dataCheckedItem.includes(1)"
+        @onChange="(isChecked) => onChangeSwitch(1, isChecked)"
+      />
+      &nbsp;&nbsp;
+      <CSwitch
+        labelText="check item 02"
+        :isChecked="dataCheckedItem.includes(2)"
+        @onChange="(isChecked) => onChangeSwitch(2, isChecked)"
+      />
+    </div>
   </div>
 </template>
 
