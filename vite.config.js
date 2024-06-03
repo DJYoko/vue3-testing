@@ -8,39 +8,39 @@ const htmlList = {}
 
 // check ./html directory
 sync('./html/**/*.html').forEach((item) => {
-  const itemKey = item.replace(/[\\]/g, '-').replace(/\.html$/, '')
-  const itemValue = './' + item.replace(/\\/g, '/')
-  htmlList[itemKey] = itemValue
+    const itemKey = item.replace(/[\\]/g, '-').replace(/\.html$/, '')
+    const itemValue = './' + item.replace(/\\/g, '/')
+    htmlList[itemKey] = itemValue
 })
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-  build: {
-    rollupOptions: {
-      input: htmlList,
-      output: {
-        entryFileNames: `html/assets/[name].js`,
-        chunkFileNames: `html/assets/[name].js`,
-        assetFileNames: `html/assets/[name].[ext]`,
-        dir: resolve(__dirname, 'dist'), // ビルド後の出力先を /dist に指定
-      },
+    plugins: [vue()],
+    build: {
+        rollupOptions: {
+            input: htmlList,
+            output: {
+                entryFileNames: `html/assets/[name].js`,
+                chunkFileNames: `html/assets/[name].js`,
+                assetFileNames: `html/assets/[name].[ext]`,
+                dir: resolve(__dirname, 'dist'), // ビルド後の出力先を /dist に指定
+            },
+        },
     },
-  },
-  server: {
-    open: '/html/',
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./resources', import.meta.url)),
-      vue: 'vue/dist/vue.esm-bundler.js',
+    server: {
+        open: '/html/',
     },
-    extensions: ['.js', '.vue', '.json', '.ts'],
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './TestVue/setup.js',
-    include: ['./TestVue/case/**/*.spec.js'],
-  },
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./resources', import.meta.url)),
+            vue: 'vue/dist/vue.esm-bundler.js',
+        },
+        extensions: ['.js', '.vue', '.json', '.ts'],
+    },
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        setupFiles: './TestVue/setup.js',
+        include: ['./TestVue/case/**/*.spec.js'],
+    },
 })

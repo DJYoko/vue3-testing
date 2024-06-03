@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <link
-      rel="icon"
-      href="/resources/img/favicon.ico"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div class="container">
-      VUE3, VITE, Playwright
-      <div id="header">
-        header logo
-        <header-login-info user-name="user name from html" />
-      </div>
-      <div id="app">
-        <root-component sample-value="value from html"></root-component>
-      </div>
-      <br />
-      文言
-      <div class="row">
-        <div class="col-sm">
-          <div id="incrementBox01">
-            <increment-box></increment-box>
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="icon"
+            href="/resources/img/favicon.ico"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+        <title>Vite App</title>
+    </head>
+    <body>
+        <div class="container">
+            VUE3, VITE, Playwright
+            <div id="header">
+                header logo
+                <header-login-info user-name="user name from html" />
+            </div>
+            <div id="app">
+                <root-component sample-value="value from html"></root-component>
+            </div>
+            <br />
+            文言
+            <div class="row">
+                <div class="col-sm">
+                    <div id="incrementBox01">
+                        <increment-box></increment-box>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div id="incrementBox02">
+                        <increment-box></increment-box>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm">
-          <div id="incrementBox02">
-            <increment-box></increment-box>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <script
-      type="module"
-      src="/resources/js/page/index/index.js"
-    ></script>
-  </body>
+        <script
+            type="module"
+            src="/resources/js/page/index/index.js"
+        ></script>
+    </body>
 </html>
